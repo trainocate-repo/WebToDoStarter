@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>CRUDforTask</title>
+</head>
+<body>
+<h1 th:text="${title}">ようこそ</h1>
+<p th:if="${complete}" th:text="${complete}"></p>
+<form method="POST" th:action="${taskForm.isNewTask}? @{/task/insert} : @{/task/update}" th:object="${taskForm}">
+	<label>タスクタイプ（選択してください）：</label>
+	<select name="typeId">
+	<option value="1" th:selected="*{typeId == 1}">緊急</option>
+	<option value="2" th:selected="*{typeId == 2}">重要</option>
+	<option value="3" th:selected="*{typeId == 3}">できれば</option>
+	</select><br>
+	<div th:if="${#fields.hasErrors('typeId')}" th:errors="*{typeId}"></div>
+	<label>やること：</label>
+	<input type="text" name="title" th:value="*{title}" /><br>
+	<div th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+	<label>詳細：</label>
+	<input type="text" name="detail" th:value="*{detail}" /><br>
+	<div th:if="${#fields.hasErrors('detail')}" th:errors="*{detail}"></div>
+	<label>期限：</label>
+	<input type="datetime-local" name="deadline" th:value="*{deadline}" /><br>
+	<div th:if="${#fields.hasErrors('deadline')}" th:errors="*{deadline}"></div>
+	<input  th:if="${taskId}" type="hidden" name="taskId" th:value="${taskId}">
+	<input type="submit" value="送信">
+</form>
+<div th:if="${taskForm.isNewTask}" style="margin:10px">
+<h3>タスク　編集削除</h3>
+<table>
+	<tr th:each="obj : ${list}">
+		<td th:text=${obj.id}></td>
+		<td th:text=${obj.title}></td>
+		<td th:text=${obj.deadline}></td>
+		<td th:text=${obj.taskType.type}></td>
+		<td><a type="button" th:href="@{/task/{id}(id=${obj.id})}">編集</a></td>
+		<td>
+			<form method="POST" th:action="@{/task/delete}">
+			<input type="hidden" name="taskId" th:value="${obj.id}">
+			<input type="submit" value="削除">
+			</form>
+		</td>
+	</tr>
+</table>
+</div>
+
+<p th:unless="${taskForm.isNewTask}"><a href="#" th:href="@{/task}">戻る</a></p>
+
+</body>
+</html>

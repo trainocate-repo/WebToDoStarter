@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/spring?characterEncoding=UTF-8&serverTimezone=JST&useSSL=false
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+  flyway:
+    enabled: false #
+logging:
+  level:
+    root: WARN

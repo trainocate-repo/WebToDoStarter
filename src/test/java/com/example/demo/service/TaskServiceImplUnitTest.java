@@ -96,9 +96,9 @@ class TaskServiceImplUnitTest {
     @Test // テストケース
     @DisplayName("タスクを1件取得した場合のテスト")
         // テスト名
-    void testGetTaskFormReturnOne() {
+    void testGetTaskReturnOne() {
     	
-    	//TaskFormをデフォルト値でインスタンス化
+    	//Taskをデフォルト値でインスタンス化
     	
         // モッククラスのI/Oをセット
 

@@ -1,7 +1,7 @@
   
 buildscript {
     ext {
-        springBootVersion = '2.1.7.RELEASE'
+        springBootVersion = '2.1.1.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -37,7 +37,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.auth0:mvc-auth-commons:1.+'
 
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'

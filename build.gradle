@@ -1,16 +1,15 @@
-
+  
 buildscript {
-	ext {
-	    springBootVersion = '2.1.7.RELEASE'
-	    junitPlatformVersion = '1.0.1'
-            junitJupiterVersion = '5.2.0'
-	}
-	repositories {
-	    mavenCentral()
-	}
-	dependencies {
-	    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('org.junit.platform:junit-platform-gradle-plugin:1.0.0')
+    }
 }
 
 apply plugin: 'java'
@@ -24,6 +23,8 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+compileJava.options.encoding = "UTF-8"
+
 configurations {
 	developmentOnly
 	runtimeClasspath {
@@ -36,6 +37,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'com.auth0:mvc-auth-commons:1.+'
 
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'

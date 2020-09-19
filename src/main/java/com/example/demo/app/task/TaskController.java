@@ -21,7 +21,7 @@ import com.example.demo.entity.Task;
 import com.example.demo.service.TaskService;
 
 /**
- * ToDoアプリ
+ * ToDoアプリ修正予定
  */
 @Controller
 @RequestMapping("/task")

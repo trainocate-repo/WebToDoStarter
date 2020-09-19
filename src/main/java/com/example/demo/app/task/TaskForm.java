@@ -11,6 +11,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class TaskForm {
 
+
+	/*
+	 * TODOアプリ実装する
+	 */
     @Digits(integer = 1, fraction = 0)
     private int typeId;
 
@@ -27,12 +31,12 @@ public class TaskForm {
     private LocalDateTime deadline;
 
     public boolean isNewTask;
-    
+
     public TaskForm() {}
 
 	public TaskForm(int typeId,
 			String title,
-			String detail, 
+			String detail,
 			LocalDateTime deadline,
 			boolean isNewTask) {
 		this.typeId = typeId;

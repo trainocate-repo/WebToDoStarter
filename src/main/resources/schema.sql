@@ -25,3 +25,14 @@ CREATE TABLE user (
   tempkey varchar(255) DEFAULT NULL,
   PRIMARY KEY (id)
 );
+
+CREATE TABLE IF NOT EXISTS profile(
+ id INT Primary KEY,
+ name VARCHAR(50),
+ appealing_point VARCHAR(200),
+ duties VARCHAR(200),
+ challenge VARCHAR(200),
+ work_history VARCHAR(200),
+ skill VARCHAR(200),
+ hobby VARCHAR(200)
+);

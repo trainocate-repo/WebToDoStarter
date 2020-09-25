@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>編集</title>
+</head>
+<h1 >編集画面</h1>
+<form method="post" action="/profile/edit" th:object=${edit}>
+<table>
+
+ <tr>
+  <th>名前</th>
+  <td>
+   <input type="text" class="form-control" th:field="*{name}"/>
+  </td>
+ </tr>
+  <tr>
+  <th>アピールポイント</th>
+  <td>
+   <input type="text" class="form-control" th:field="*{appealingPoint}"/>
+  </td>
+ </tr>
+  <tr>
+  <th>現在の職務</th>
+  <td>
+   <input type="text" class="form-control" th:field="*{duties}"/>
+  </td>
+ </tr>
+  <tr>
+  <th>将来やりたいこと</th>
+  <td>
+   <input type="text" class="form-control" th:field="*{challenge}"/>
+  </td>
+ </tr>
+  <tr>
+  <th>職歴</th>
+  <td>
+   <input type="text" class="form-control" th:field="*{workHistory}"/>
+  </td>
+ </tr>
+   <tr>
+  <th>スキル</th>
+  <td>
+   <input type="text" class="form-control" th:field="*{skill}"/>
+  </td>
+ </tr>
+   <tr>
+  <th>趣味</th>
+  <td>
+   <input type="text" class="form-control" th:field="*{hobby}"/>
+  </td>
+ </tr>
+</table>
+
+<input type="submit" value="更新"/>
+</form>
+  <a th:href="@{'/profile/detail/'+${edit.id}}">詳細</a>
+<a th:href="@{'/profile'}">一覧へ</a>
+<body>
+</html>

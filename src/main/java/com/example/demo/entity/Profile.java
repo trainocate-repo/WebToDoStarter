@@ -1,10 +1,9 @@
-package com.example.demo.domain.model;
+package com.example.demo.entity;
 
 import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
 
 @Entity
 public class Profile implements Serializable{

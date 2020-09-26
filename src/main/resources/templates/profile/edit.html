@@ -5,9 +5,15 @@
 <title>編集</title>
 </head>
 <h1 >編集画面</h1>
-<form method="post" action="/profile/edit" th:object=${edit}>
+<form method="post" action="/profile/edit" th:object=${profile}>
 <table>
-
+ <tr>
+  <th>ID</th>
+  <td>
+   [[${profile.id}]]
+   <input type="hidden" class="form-control" th:field="*{id}"/>
+  </td>
+ </tr>
  <tr>
   <th>名前</th>
   <td>
@@ -54,7 +60,7 @@
 
 <input type="submit" value="更新"/>
 </form>
-  <a th:href="@{'/profile/detail/'+${edit.id}}">詳細</a>
+  <a th:href="@{'/profile/detail/'+${profile.id}}">詳細</a>
 <a th:href="@{'/profile'}">一覧へ</a>
 <body>
 </html>

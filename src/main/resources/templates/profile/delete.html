@@ -9,38 +9,40 @@
 
 削除してもよろしいですか？
 
+<form method="post" action="/profile/delete" th:object=${profile}>
 <table>
 <tr>
  <th>ID</th>
- <td>[[${detail.id}]]</td>
+ <td>[[${profile.id}]]</td>
+ <td><input type="hidden" class="form-control" th:field="*{id}"/></td>
 </tr>
 <tr>
  <th>名前</th>
- <td>[[${detail.name}]]</td>
+ <td>[[${profile.name}]]</td>
 </tr>
 <tr>
  <th>アピールポイント</th>
- <td>[[${detail.appealingPoint}]]</td>
+ <td>[[${profile.appealingPoint}]]</td>
 </tr>
 <tr>
  <th>現在の職務</th>
- <td>[[${detail.duties}]]</td>
+ <td>[[${profile.duties}]]</td>
 </tr>
 <tr>
  <th>将来やりたいこと</th>
- <td>[[${detail.challenge}]]</td>
+ <td>[[${profile.challenge}]]</td>
 </tr>
 <tr>
  <th>職歴</th>
- <td>[[${detail.workHistory}]]</td>
+ <td>[[${profile.workHistory}]]</td>
 </tr>
 <tr>
  <th>スキル</th>
- <td>[[${detail.skill}]]</td>
+ <td>[[${profile.skill}]]</td>
 </tr>
 <tr>
  <th>趣味</th>
- <td>[[${detail.hobby}]]</td>
+ <td>[[${profile.hobby}]]</td>
 </tr>
 <tr>
 
@@ -48,9 +50,11 @@
 <tbody>
 </tbody>
 </table>
-
+<input type="submit" value="確定"/>
+</form>
 <br/>
-<a th:href="@{'/profile/delete'}">確定</a>
+
+<a th:href="@{'/profile/detail/'+${profile.id}}">戻る</a>
 <a th:href="@{'/profile'}">一覧へ</a>
-<a th:href="@{'/profile/input'}">新規登録へ</a>
+
 </html>

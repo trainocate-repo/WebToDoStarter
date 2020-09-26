@@ -1,4 +1,4 @@
-package com.example.demo.domain.model;
+package com.example.demo.app.profile;
 
 import javax.validation.constraints.Size;
 

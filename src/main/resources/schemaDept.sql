@@ -25,3 +25,13 @@ CREATE TABLE user (
   tempkey varchar(255) DEFAULT NULL,
   PRIMARY KEY (id)
 );
+
+CREATE TABLE dept (
+	groupName VARCHAR(50),
+	departmentName VARCHAR(50),
+ 	recruitment VARCHAR(50),
+ 	recruitee VARCHAR(50),
+ 	skills VARCHAR(50),
+ 	contact VARCHAR(50),
+ 	PRIMARY KEY (departmentName)
+ );

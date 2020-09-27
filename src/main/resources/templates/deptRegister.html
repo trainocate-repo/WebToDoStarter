@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"></link>
+	
+
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>	
+	
+	
+<title>募集内容登録画面</title>
+</head>
+<body>
+	<div class="col-md-8">
+		<div class="page-header">
+			<h1>募集内容を登録してください。</h1>
+		</div>
+		
+		<form method="post" action="/deptRegister" th:object="${deptRegisterForm}">
+        <div class="form-group">
+            <label>本部</label>
+            <input type="text" name="groupName" class="form-control" th:field="*{groupName}">
+        </div>
+        <div class="form-group">
+            <label>部署</label>
+            <input type="text" name="departmentName" class="form-control" th:field="*{departmentName}">
+        </div>
+        <div class="form-group">
+            <label>募集内容</label>
+            <input type="text" name="recruitment" class="form-control" th:field="*{recruitment}">
+        </div>
+        <div class="form-group">
+            <label>募集人材</label>
+            <input type="text" name="recruitee" class="form-control" th:field="*{recruitee}">
+        </div>
+         <div class="form-group">
+            <label>必要スキル</label>
+            <input type="text" name="skills" class="form-control" th:field="*{skills}">
+        </div>
+        <div class="form-group">
+            <label>連絡先</label>
+            <input type="text" name="contact" class="form-control" th:field="*{contact}">
+        </div>
+        
+        <button class="btn btn-primary" type="submit" name="register">登録</button>
+        <button class="btn btn-primary" type="submit" name="toDeptList">一覧画面へ</button>
+    </form>
+		
+		
+		<!--
+		<form method="post" action="deptRegister/db">
+			<table class="table table-bordered table-hover">
+				<tr>
+					<th class="active col-md-4">本部</th>
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th class="active">部署</th>
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th class="active">募集内容</th>
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th class="active">募集人材</th>
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th class="active">必要スキル</th>
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th class="active">連絡先</th>
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control" />
+						</div>
+					</td>
+				</tr>
+			</table>
+			<button class="btn btn-primary" type="submit">
+				募集内容登録
+			</button>
+		</form>
+		-->
+	</div>
+
+
+</body>
+</html>

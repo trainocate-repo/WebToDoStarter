@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>一覧</title>
+</head>
+<body>
+<h1 >従業員一覧</h1>
+<div th:if="${success}"class="alert alert-success">[[${success}]]</div>
+<table>
+<tr>
+ <th>ID</th>
+ <th>名前</th>
+ <th>アピールポイント</th>
+ <th>現在の職務</th>
+ <th>将来やりたいこと</th>
+ <th>職歴</th>
+ <th>スキル</th>
+ <th>趣味</th>
+
+</tr>
+<tbody>
+<tr th:each="profile:${profiles}">
+ <td>[[${profile.id}]]</td>
+ <td>[[${profile.name}]]</td>
+ <td>[[${profile.appealingPoint}]]</td>
+ <td>[[${profile.duties}]]</td>
+ <td>[[${profile.challenge}]]</td>
+ <td>[[${profile.workHistory}]]</td>
+ <td>[[${profile.skill}]]</td>
+ <td>[[${profile.hobby}]]</td>
+ <td>
+  <a th:href="@{'/profile/detail/'+${profile.id}}">詳細</a>
+ </td>
+</tbody>
+</table>
+
+<label th:text="'合計：'+${count}+'件'"></label>
+<br/>
+<a th:href="@{'/profile/input'}">新規登録へ</a>
+</html>

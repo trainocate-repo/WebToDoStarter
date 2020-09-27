@@ -27,11 +27,11 @@ CREATE TABLE user (
 );
 
 CREATE TABLE dept (
-	groupName VARCHAR(50),
-	departmentName VARCHAR(50),
- 	recruitment VARCHAR(50),
- 	recruitee VARCHAR(50),
- 	skills VARCHAR(50),
- 	contact VARCHAR(50),
- 	PRIMARY KEY (departmentName)
+	groupName VARCHAR(100),
+	departmentName VARCHAR(100),
+ 	recruitment VARCHAR(1000),
+ 	recruitee VARCHAR(100),
+ 	skills VARCHAR(100),
+ 	contact VARCHAR(100),
+ 	PRIMARY KEY (departmentName, recruitment)
  );

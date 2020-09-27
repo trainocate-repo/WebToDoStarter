@@ -1,9 +1,17 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:morishima
+    url: jdbc:h2:mem:de
     driverClassName: org.h2.Driver
     username: sa
     password: password
+
+    initialization-mode: always
+
   h2.console.enabled: true
-  
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
 

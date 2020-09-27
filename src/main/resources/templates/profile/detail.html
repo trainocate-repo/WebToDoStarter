@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>詳細</title>
+</head>
+<body>
+<h1 >詳細</h1>
+
+<table>
+<tr>
+ <th>ID</th>
+ <td>[[${profile.id}]]</td>
+</tr>
+<tr>
+ <th>名前</th>
+ <td>[[${profile.name}]]</td>
+</tr>
+<tr>
+ <th>アピールポイント</th>
+ <td>[[${profile.appealingPoint}]]</td>
+</tr>
+<tr>
+ <th>現在の職務</th>
+ <td>[[${profile.duties}]]</td>
+</tr>
+<tr>
+ <th>将来やりたいこと</th>
+ <td>[[${profile.challenge}]]</td>
+</tr>
+<tr>
+ <th>職歴</th>
+ <td>[[${profile.workHistory}]]</td>
+</tr>
+<tr>
+ <th>スキル</th>
+ <td>[[${profile.skill}]]</td>
+</tr>
+<tr>
+ <th>趣味</th>
+ <td>[[${profile.hobby}]]</td>
+</tr>
+<tr>
+
+</tr>
+<tbody>
+
+
+
+</tbody>
+</table>
+
+<br/>
+<a th:href="@{'/profile/edit/'+${profile.id}}">編集</a>
+<a th:href="@{'/profile/delete/'+${profile.id}}">削除</a>
+<a th:href="@{'/profile'}">一覧へ</a>
+
+</html>

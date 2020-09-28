@@ -1,19 +1,15 @@
-CREATE TABLE task_type (
-  id int(2) NOT NULL,
-  type varchar(20) NOT NULL,
-  comment varchar(50) DEFAULT NULL,
-  PRIMARY KEY (id)
-);
 
-CREATE TABLE task (
-  id int(5) NOT NULL AUTO_INCREMENT,
-  user_id int(5) NOT NULL,
-  type_id int(2) NOT NULL,
-  title varchar(50) NOT NULL,
-  detail text,
-  deadline datetime NOT NULL,
-  PRIMARY KEY (id)
-) ;
+
+
+CREATE TABLE IF NOT EXISTS  dept (
+	groupName VARCHAR(100),
+	departmentName VARCHAR(100),
+ 	recruitment VARCHAR(1000),
+ 	recruitee VARCHAR(100),
+ 	skills VARCHAR(100),
+ 	contact VARCHAR(100),
+ 	PRIMARY KEY (departmentName, recruitment)
+ );
 
 CREATE TABLE user (
   id int(11) NOT NULL AUTO_INCREMENT,
@@ -36,3 +32,4 @@ CREATE TABLE IF NOT EXISTS profile(
  skill VARCHAR(200),
  hobby VARCHAR(200)
 );
+

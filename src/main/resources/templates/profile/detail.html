@@ -1,58 +1,86 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8"></meta>
-<title>詳細</title>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultrap.net.nz/thymeleaf/layout">
+
 </head>
+
+<header class="bg-primary text-center py-5 mb-4">
+  <div class="container-fluid">
+    <h1 class="font-weight-light text-white">My Profile</h1>
+  </div>
+</header>
+
+<meta charset="UTF-8"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+ <link href="css/scrolling-nav.css" rel="stylesheet">
+
 <body>
-<h1 >詳細</h1>
 
-<table>
-<tr>
- <th>ID</th>
- <td>[[${profile.id}]]</td>
-</tr>
-<tr>
- <th>名前</th>
- <td>[[${profile.name}]]</td>
-</tr>
-<tr>
- <th>アピールポイント</th>
- <td>[[${profile.appealingPoint}]]</td>
-</tr>
-<tr>
- <th>現在の職務</th>
- <td>[[${profile.duties}]]</td>
-</tr>
-<tr>
- <th>将来やりたいこと</th>
- <td>[[${profile.challenge}]]</td>
-</tr>
-<tr>
- <th>職歴</th>
- <td>[[${profile.workHistory}]]</td>
-</tr>
-<tr>
- <th>スキル</th>
- <td>[[${profile.skill}]]</td>
-</tr>
-<tr>
- <th>趣味</th>
- <td>[[${profile.hobby}]]</td>
-</tr>
-<tr>
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>About Us</h2>
+          <p class="lead">This is a great place to talk about Us. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+          <ul>
+            <li> ID [[${profile.id}]]</li>
+            <li>名前[[${profile.name}]]</li>
+            <li>アピールポイント[[${profile.appealingPoint}]]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</tr>
-<tbody>
+  <section id="services" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Services we offer</h2>
+          <p class="lead">
+            <div>【現在の職務】</div>
+ 			<div>[[${profile.duties}]]</div>
+ 			<div>【将来やりたいこと】</div>
+			<div>[[${profile.challenge}]]</div>
+			<div>【職歴】</div>
+			<div>[[${profile.workHistory}]]</div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Contact us</h2>
+          <p class="lead">
+           <div>【スキル】</div>
+		   <div>[[${profile.skill}]]</div>
+		   <div>【趣味】</div>
+		   <div>[[${profile.hobby}]]</div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
-</tbody>
-</table>
 
 <br/>
 <a th:href="@{'/profile/edit/'+${profile.id}}">編集</a>
 <a th:href="@{'/profile/delete/'+${profile.id}}">削除</a>
 <a th:href="@{'/profile'}">一覧へ</a>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <script src="js/scrolling-nav.js"></script>
 
 </html>

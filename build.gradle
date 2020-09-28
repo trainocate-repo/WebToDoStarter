@@ -41,15 +41,15 @@ repositories {
 
 dependencies {
 
-    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.webjars:bootstrap:4.3.1'
+    implementation 'org.webjars:jquery:3.4.1'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
 
     testImplementation('org.junit.jupiter:junit-jupiter-api:5.2.0')
     testImplementation('org.junit.jupiter:junit-jupiter-params:5.2.0')
@@ -57,6 +57,11 @@ dependencies {
     testImplementation('org.junit.platform:junit-platform-commons:1.5.2')
     testImplementation('org.mockito:mockito-core:2.21.0')
     testImplementation('org.mockito:mockito-junit-jupiter:2.21.0')
+
+    compile('org.projectlombok:lombok:1.18.4')
+
+    compile('org.webjars:webjars-locator:0.30')
+    compile('org.webjars:bootstrap:4.0.0-2')
 
 }
 

@@ -2,24 +2,32 @@
 <html xmlns:th="http://www.thymeleaf.org"
   xmlns:layout="http://www.ultrap.net.nz/thymeleaf/layout">
 
+<head>
+<meta charset="UTF-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" rel="stylesheet">
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/video.css" rel="stylesheet">
+</head>
+
 <header>
   <div class="overlay"></div>
-  <video autoplay="autoplay" muted="muted" loop="loop">
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
     <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
   </video>
   <div class="container h-100">
     <div class="d-flex h-100 text-center align-items-center">
       <div class="w-100 text-white">
-        <h1 class="display-3">Profile List</h1>
-        <p class="lead mb-0">With DE Members</p>
+        <h1 class="display-3">Video Header</h1>
+        <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>
       </div>
     </div>
   </div>
 </header>
 
-<meta charset="UTF-8"></meta>
-<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
-<link rel="stylesheet" th:href="@{/css/scrolling-nav.css}">
 
 <body>
 

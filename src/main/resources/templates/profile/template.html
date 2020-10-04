@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--/* (1) */-->
+<html class="no-js" xmlns:th="http://www.thymeleaf.org" th:fragment="layout (title,body)">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" th:href="@{/resources/app/css/styles.css}" type="text/css"
+    media="screen, projection">
+<script type="text/javascript">
+
+</script>
+<!--/* (2) */-->
+<title th:replace="${title}">Staff Management System</title>
+</head>
+<body>
+    <!--/* (3) */-->
+    <div id="header" th:replace="~{layout/header :: header}"></div>
+    <!--/* (4) */-->
+    <div id="body" th:replace="${body}"></div>
+    <!--/* (5) */-->
+    <div id="footer" th:replace="~{layout/footer :: footer}"></div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>header</title>
+</head>
+<body>
+    <!--/* (1) */-->
+    <div th:fragment="header" th:remove="tag">
+        <h1>
+            <a th:href="@{/}">Staff Management System</a>
+        </h1>
+    </div>
+</body>
+</html>

@@ -1,41 +1,90 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultrap.net.nz/thymeleaf/layout">
+
 <head>
 <meta charset="UTF-8"></meta>
-<title>一覧</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" rel="stylesheet">
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/video.css" rel="stylesheet">
 </head>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="/profile">Profile List</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" th:href="@{'/profile/input'}">Resister</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" th:href="@{'/joblist/joblist'}">Recruitment</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<header>
+  <div class="overlay"></div>
+  <!--
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+  </video>
+   -->
+   <img src="https://source.unsplash.com/collection/190727/1600x300" class="card-img-top" alt="...">
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        <h1 class="display-3">Video Header</h1>
+        <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+
 <body>
-<h1 >従業員一覧</h1>
-<div th:if="${success}"class="alert alert-success">[[${success}]]</div>
-<table>
-<tr>
- <th>ID</th>
- <th>名前</th>
- <th>アピールポイント</th>
- <th>現在の職務</th>
- <th>将来やりたいこと</th>
- <th>職歴</th>
- <th>スキル</th>
- <th>趣味</th>
 
-</tr>
-<tbody>
-<tr th:each="profile:${profiles}">
- <td>[[${profile.id}]]</td>
- <td>[[${profile.name}]]</td>
- <td>[[${profile.appealingPoint}]]</td>
- <td>[[${profile.duties}]]</td>
- <td>[[${profile.challenge}]]</td>
- <td>[[${profile.workHistory}]]</td>
- <td>[[${profile.skill}]]</td>
- <td>[[${profile.hobby}]]</td>
- <td>
-  <a th:href="@{'/profile/detail/'+${profile.id}}">詳細</a>
- </td>
-</tbody>
-</table>
+<div th:each="profile:${profiles}">
+ <div class="container">
+  <div class="row">
+    <!-- Team Member 1 -->
+    <div class="col-md-2"> </div>
+    <div class="col-md-7">
+      <div class="card border-0 shadow">
+        <a th:href="@{'/profile/detail/'+${profile.id}}">
+         <img src="https://source.unsplash.com/user/erondu/700x200" class="card-img-top" alt="...">
+        </a>
+      </div>
+    </div>
+        <div class="card-body text-center">
+          <div class="card-text text-black-100"></div>
+          <br>
+          <div class="card-title mb-0">[[${profile.name}]]</div>
+          <br>
+          <div class="card-text text-black-50">[[${profile.appealingPoint}]]</div>
+          <br>
+          <div class="card-text text-black-50">[[${profile.challenge}]]</div>
+        </div>
+    </div>
+    <hr>
+ </div>
+</div>
 
-<label th:text="'合計：'+${count}+'件'"></label>
 <br/>
-<a th:href="@{'/profile/input'}">新規登録へ</a>
+
+<script th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/scrolling-nav.js}"></script>
+
+</body>
 </html>

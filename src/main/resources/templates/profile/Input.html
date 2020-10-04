@@ -1,59 +1,69 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultrap.net.nz/thymeleaf/layout">
+
+ <header class="bg-primary text-center py-5 mb-4">
+  <div class="container-fluid">
+    <h1 class="font-weight-light text-white">Register</h1>
+  </div>
+</header>
+
 <meta charset="UTF-8"></meta>
-<title>入力</title>
-</head>
-<h1 >入力</h1>
-<form method="post" action="/profile/input" th:object=${profile}>
-<table>
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
 
- <tr>
-  <th>名前</th>
-  <td>
-   <input type="text" class="form-control" th:field="*{name}"/>
-  </td>
- </tr>
-  <tr>
-  <th>アピールポイント</th>
-  <td>
-   <input type="text" class="form-control" th:field="*{appealingPoint}"/>
-  </td>
- </tr>
-  <tr>
-  <th>現在の職務</th>
-  <td>
-   <input type="text" class="form-control" th:field="*{duties}"/>
-  </td>
- </tr>
-  <tr>
-  <th>将来やりたいこと</th>
-  <td>
-   <input type="text" class="form-control" th:field="*{challenge}"/>
-  </td>
- </tr>
-  <tr>
-  <th>職歴</th>
-  <td>
-   <input type="text" class="form-control" th:field="*{workHistory}"/>
-  </td>
- </tr>
-   <tr>
-  <th>スキル</th>
-  <td>
-   <input type="text" class="form-control" th:field="*{skill}"/>
-  </td>
- </tr>
-   <tr>
-  <th>趣味</th>
-  <td>
-   <input type="text" class="form-control" th:field="*{hobby}"/>
-  </td>
- </tr>
-</table>
-
-<input type="submit" value="登録"/>
-</form>
-<a th:href="@{'/profile'}">一覧へ</a>
 <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+             <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">Profile Input</h5>
+            <form method="post" action="/profile/input" th:object=${profile}  class="form-signin">
+
+              <div class="form-label-group">
+                <input type="text" id="inputUserame" class="form-control" placeholder="Name"th:field="*{name}" required autofocus>
+              </div>
+
+              <hr>
+
+              <div class="form-label-group">
+                <input type="text" id="inputAppealingPoint" class="form-control" placeholder="AppealingPoint" th:field="*{appealingPoint}" required>
+              </div>
+              <br>
+              <div class="form-label-group">
+                <input type="text" id="inputDuties" class="form-control" placeholder="Duties" th:field="*{duties}" required>
+              </div>
+              <br>
+              <div class="form-label-group">
+                <input type="text" id="inputChallenge" class="form-control" placeholder="Challenge" th:field="*{challenge}" required>
+              </div>
+              <br>
+              <div class="form-label-group">
+                <input type="text" id="inputWorkHistory" class="form-control" placeholder="WorkHistory" th:field="*{workHistory}" required>
+              </div>
+
+              <hr>
+
+              <div class="form-label-group">
+                <input type="text" id="inputSkill" class="form-control" placeholder="Skill" th:field="*{skill}" required>
+              </div>
+              <br>
+              <div class="form-label-group">
+                <input type="text" id="inputHobby" class="form-control" placeholder="Hobby" th:field="*{hobby}" required>
+              </div>
+              <br>
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
 </html>

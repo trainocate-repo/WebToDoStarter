@@ -1,58 +1,137 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultrap.net.nz/thymeleaf/layout">
+
 <head>
+
 <meta charset="UTF-8"></meta>
-<title>詳細</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+  <title>Detail</title>
+
+<link th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" rel="stylesheet" >
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/scrolling-nav.css" rel="stylesheet">
+
 </head>
-<body>
-<h1 >詳細</h1>
 
-<table>
-<tr>
- <th>ID</th>
- <td>[[${profile.id}]]</td>
-</tr>
-<tr>
- <th>名前</th>
- <td>[[${profile.name}]]</td>
-</tr>
-<tr>
- <th>アピールポイント</th>
- <td>[[${profile.appealingPoint}]]</td>
-</tr>
-<tr>
- <th>現在の職務</th>
- <td>[[${profile.duties}]]</td>
-</tr>
-<tr>
- <th>将来やりたいこと</th>
- <td>[[${profile.challenge}]]</td>
-</tr>
-<tr>
- <th>職歴</th>
- <td>[[${profile.workHistory}]]</td>
-</tr>
-<tr>
- <th>スキル</th>
- <td>[[${profile.skill}]]</td>
-</tr>
-<tr>
- <th>趣味</th>
- <td>[[${profile.hobby}]]</td>
-</tr>
-<tr>
-
-</tr>
-<tbody>
+<body id="page-top">
 
 
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="/profile">Profile List</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Things I want to do</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" th:href="@{'/profile/edit/'+${profile.id}}">edit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" th:href="@{'/profile/delete/'+${profile.id}}">delete</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-</tbody>
-</table>
+<header class="bg-primary text-center py-5  mb-4">
+  <div class="container-fluid text-center">
+   <br><br>
+    <h1 class="font-weight-light text-white">My Profile</h1>
+  </div>
+</header>
+
+
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto"><br><br><br><br>
+          <img src="https://source.unsplash.com/random/700x200" class="card-img-top" alt="..."><br>
+          <h2>About Me</h2>
+          <p class="lead">This is a great place to talk about Me.
+          Please read this profile carefully to understand who I am.
+          Especially here, my appeal points, skills, qualifications and hobbies are listed, which is the most important part.
+          take your time!:</p><br>
+
+            <h4> ID </h4> <div> [[${profile.id}]]</div><br>
+            <h4> NAME</h4> <div> [[${profile.name}]]</div><br><br><br><br>
+            <h4>アピールポイント</h4><br> <div> [[${profile.appealingPoint}]]</div><br><br><br><br>
+            <h4>スキル</h4><br> <div> [[${profile.skill}]]</div><br><br><br><br>
+            <h4>趣味</h4><br> <div> [[${profile.hobby}]]</div><br><br><br><br>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto"><br><br>
+        <img src="https://source.unsplash.com/collection/190727/700x200" class="card-img-top" alt="..."><br>
+          <h2>Things I want to do</h2>
+          <p class="lead">Do you find out the only feature that no one else has?
+          I hope you understand that I am an irreplaceable person.
+          The following sentence wants you to know about the work I am doing.
+          And with that in mind, think about what I want to do in my future work.
+           <br>
+            <h4>現在の職務</h4> <br>
+ 			<div>[[${profile.duties}]]</div>
+ 			<br><br><br><br>
+ 			<h4>将来やりたいこと</h4>
+ 			<br>
+			<div>[[${profile.challenge}]]</div>
+			<br><br><br><br>
+			<h4>これまで取り組んできたこと</h4>
+			<br>
+			<div>[[${profile.workHistory}]]</div>
+			<br><br><br><br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto"><br><br><br><br>
+         <img src="https://source.unsplash.com/user/erondu/700x200" class="card-img-top" alt="..."><br>
+          <h2>Contact Me</h2>
+          Now, I think it's hard to get in touch with me anymore.
+          You can send me an email using the form below. But I don't know if I can reply immediately ...
+          <p class="lead">
+          <br>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 <br/>
-<a th:href="@{'/profile/edit/'+${profile.id}}">編集</a>
-<a th:href="@{'/profile/delete/'+${profile.id}}">削除</a>
-<a th:href="@{'/profile'}">一覧へ</a>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <script src="js/scrolling-nav.js"></script>
 
 </html>

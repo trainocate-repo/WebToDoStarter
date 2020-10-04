@@ -28,7 +28,7 @@ public class DeptDaoJdbcImpl implements DeptDao{
 	@Override
 	public int insertOne(Dept dept) throws DataAccessException{
 		
-		int rowNumber = jdbc.update("INSERT INTO dept(groupName, departmentName, recruitment, recruitee, skills, contact) VALUES(?,?,?,?,?,?)" , dept.getGroupName(), dept.getDepartmentName(), dept.getRecruitment(), dept.getRecruitee(), dept.getSkills(), dept.getContact());
+		int rowNumber = jdbc.update("INSERT INTO dept(groupName, departmentName, title, recruitment, recruitmentDetail, recruitee, skills, contact) VALUES(?,?,?,?,?,?,?,?)" , dept.getGroupName(), dept.getDepartmentName(), dept.getTitle(), dept.getRecruitment(), dept.getRecruitmentDetail(), dept.getRecruitee(), dept.getSkills(), dept.getContact());
 		
 		return rowNumber;
 	}
@@ -41,7 +41,9 @@ public class DeptDaoJdbcImpl implements DeptDao{
 		Dept dept = new Dept();
 		dept.setGroupName((String)map.get("groupName"));
 		dept.setDepartmentName((String)map.get("departmentName"));
+		dept.setTitle((String)map.get("title"));
 		dept.setRecruitment((String)map.get("recruitment"));
+		dept.setRecruitmentDetail((String)map.get("recruitmentDetail"));
 		dept.setRecruitee((String)map.get("recruitee"));
 		dept.setSkills((String)map.get("skills"));
 		dept.setContact((String)map.get("contact"));
@@ -60,7 +62,9 @@ public class DeptDaoJdbcImpl implements DeptDao{
 			Dept dept = new Dept();
 			dept.setGroupName((String)map.get("groupName"));
 			dept.setDepartmentName((String)map.get("departmentName"));
+			dept.setTitle((String)map.get("title"));
 			dept.setRecruitment((String)map.get("recruitment"));
+			dept.setRecruitmentDetail((String)map.get("recruitmentDetail"));
 			dept.setRecruitee((String)map.get("recruitee"));
 			dept.setSkills((String)map.get("skills"));
 			dept.setContact((String)map.get("contact"));
@@ -74,8 +78,8 @@ public class DeptDaoJdbcImpl implements DeptDao{
 	@Override
 	public int updateOne(Dept dept) throws DataAccessException{
 		
-		int rowNumber = jdbc.update("UPDATE dept SET groupName = ?, recruitment = ?, recruitee = ?, skills = ?, contact = ? WHERE departmentName = ? ",  
-														dept.getGroupName(), dept.getRecruitment(), dept.getRecruitee(), dept.getSkills(), dept.getContact(), dept.getDepartmentName() );
+		int rowNumber = jdbc.update("UPDATE dept SET groupName = ?, title = ?, recruitment = ?, recruitmentDetail = ?, recruitee = ?, skills = ?, contact = ? WHERE departmentName = ? ",  
+														dept.getGroupName(), dept.getTitle(), dept.getRecruitment(), dept.getRecruitmentDetail(), dept.getRecruitee(), dept.getSkills(), dept.getContact(), dept.getDepartmentName() );
 
 		
 		return rowNumber;

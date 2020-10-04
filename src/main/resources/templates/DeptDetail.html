@@ -23,7 +23,9 @@
 			<tr>
 				<th>グループ名</th>
 				<th>部署名</th>
+				<th>募集タイトル</th>
 				<th >募集内容</th>
+				<th >募集内容詳細</th>
 				<th>募集人材</th>
 				<th>必要スキル</th>
 				<th>連絡先</th>
@@ -31,7 +33,9 @@
 			<tr>
 				<td th:text="${dept.groupName}"></td>
 				<td th:text="${dept.departmentName}"></td>
+				<td th:text="${dept.title}"></td>
 				<td th:text="${dept.recruitment}"></td>
+				<td th:text="${dept.recruitmentDetail}"></td>
 				<td th:text="${dept.recruitee}"></td>
 				<td th:text="${dept.skills}"></td>
 				<td th:text="${dept.contact}"></td>

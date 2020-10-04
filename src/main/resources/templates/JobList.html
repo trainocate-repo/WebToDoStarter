@@ -11,7 +11,7 @@
   <title>公募一覧</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/blog-home.css" rel="stylesheet">
@@ -55,6 +55,8 @@
 
       <!-- Blog Entries Column -->
       <div class="col-md-11">
+   <br><br>   <br><br>
+      
 
         <h1 class="my-4">公募一覧
           <small>~各部公募紹介~</small>
@@ -66,7 +68,7 @@
           <div class="container">
             <div class="card mb-4">
               <article class="projects-index-single" >
-                <img class="card-img-top" src=[[${deptList.img}]] alt="Card image cap">
+                <img class="card-img-top" src="https://source.unsplash.com/user/erondu/700x200" alt="Card image cap">
               <div class="card-body">
                 <h2 class="card-title" th:text="${deptList.title}">募集タイトル</h2>
                 <h6 class="card-subtile text-secondary" th:text="${deptList.departmentName}">部署名</h6>
@@ -113,7 +115,7 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="js/jquery-3.5.1.slim.min.js"></script>
+<script th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
 
 </body>

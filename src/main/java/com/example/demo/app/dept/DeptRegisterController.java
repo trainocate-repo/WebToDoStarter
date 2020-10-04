@@ -38,7 +38,9 @@ public class DeptRegisterController {
 		
 		dept.setGroupName(form.getGroupName());
 		dept.setDepartmentName(form.getDepartmentName());
+		dept.setTitle(form.getTitle());
 		dept.setRecruitment(form.getRecruitment());
+		dept.setRecruitmentDetail(form.getRecruitmentDetail());
 		dept.setRecruitee(form.getRecruitee());
 		dept.setSkills(form.getSkills());
 		dept.setContact(form.getContact());
@@ -65,12 +67,12 @@ public class DeptRegisterController {
 		int count = deptRegisterService.count();
 		model.addAttribute("deptListCount", count);
 		
-		return "deptList";
+		return "JobList";
 				
 	}
 	
 	@PostMapping(value="/deptRegister", params="toDeptList")
-	@GetMapping("/deptList")
+	@GetMapping("/JobList")
 	public String getDeptList(Model model) {
 		model.addAttribute("contents", "deptList :: deptList_contents");
 		
@@ -81,7 +83,7 @@ public class DeptRegisterController {
 		int count = deptRegisterService.count();
 		model.addAttribute("deptListCount", count);
 		
-		return "deptList";
+		return "JobList";
 				
 	}
 
@@ -115,7 +117,9 @@ public class DeptRegisterController {
 			
 			form.setDepartmentName(dept.getDepartmentName());
 			form.setGroupName(dept.getGroupName());
+			form.setTitle(dept.getTitle());
 			form.setRecruitment(dept.getRecruitment());
+			form.setRecruitmentDetail(dept.getRecruitmentDetail());
 			form.setRecruitee(dept.getRecruitee());
 			form.setSkills(dept.getSkills());
 			form.setContact(dept.getContact());
@@ -134,7 +138,9 @@ public class DeptRegisterController {
 		
 		dept.setDepartmentName(form.getDepartmentName());
 		dept.setGroupName(form.getGroupName());
+		dept.setTitle(form.getTitle());
 		dept.setRecruitment(form.getRecruitment());
+		dept.setRecruitmentDetail(form.getRecruitmentDetail());
 		dept.setRecruitee(form.getRecruitee());
 		dept.setSkills(form.getSkills());
 		dept.setContact(form.getContact());

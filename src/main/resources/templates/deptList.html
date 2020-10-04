@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/tyhymeleaf/layout">
+<head>
+<meta charset="UTF-8"></meta>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"></link>
+
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+
+<title>募集内容登録画面</title>
+</head>
+<body>
+	<div th:fragment="deptList_contents">
+		<div class="page-header">
+			<h1>募集内容一覧</h1>
+		</div>
+		<table class="table table-bordered table-hover table-striped">
+			<tr>
+				<th>グループ名</th>
+				<th>部署名</th>
+				<th >募集内容</th>
+				<th>募集人材</th>
+				<th>必要スキル</th>
+				<th>連絡先</th>
+				<th>詳細</th>
+				<th>編集</th>
+			</tr>
+			<tr th:each="dept : ${deptList}">
+				<td th:text="${dept.groupName}"></td>
+				<td th:text="${dept.departmentName}"></td>
+				<td th:text="${dept.recruitment}"></td>
+				<td th:text="${dept.recruitee}"></td>
+				<td th:text="${dept.skills}"></td>
+				<td th:text="${dept.contact}"></td>
+				<td><a class="btn btn-primary" th:href="@{'deptDetail/' + ${dept.departmentName}}">詳細</a>
+				<td><a class="btn btn-primary" th:href="@{'deptEdit/' + ${dept.departmentName}}">編集</a>
+			</tr>
+		</table>
+		<label th:text="'合計：' + ${deptListCount} + '件' "></label><br /> <label
+			class="text-info" th:text="${ewsult}">結果表示</label><br />
+			
+			<a class="btn btn-primary" th:href="deptRegister">登録画面へ</a>
+	
+	</div>
+
+
+</body>
+</html>

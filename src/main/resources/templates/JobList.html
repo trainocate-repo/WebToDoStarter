@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>公募一覧</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/blog-home.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">キャリアSNS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-md-11">
+
+        <h1 class="my-4">公募一覧
+          <small>~各部公募紹介~</small>
+        </h1>
+
+        <!--公募募集リスト変数を取得-->
+        <div th:each="deptList:${deptList}">
+        <!--公募募集一覧を表示-->
+          <div class="container">
+            <div class="card mb-4">
+              <article class="projects-index-single" >
+                <img class="card-img-top" src=[[${deptList.img}]] alt="Card image cap">
+              <div class="card-body">
+                <h2 class="card-title" th:text="${deptList.title}">募集タイトル</h2>
+                <h6 class="card-subtile text-secondary" th:text="${deptList.departmentName}">部署名</h6>
+                <p class="card-text" th:text="${deptList.recruitment}">募集内容</p>
+                <p class="card-text" th:text="${deptList.recruitmentDetail}">募集内容詳細</p>
+                <p class="card-text" th:text="${deptList.recruitment}">募集人材</p>
+                <p class="card-text" th:text="${deptList.skills}">必要スキル</p>
+                <p class="card-text" th:text="${deptList.contact}">連絡先</p>
+                <a href="#" class="btn btn-primary">募集内容詳細画面 &rarr;</a>
+              </div>
+                <div class="card-footer text-muted">
+                    Posted on January 1, 2020 by
+                    <a href="#">投稿者へ</a>
+                  </div>
+            　</article>
+            </div>
+       　 </div>
+        </div>
+        
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">&larr; Older</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Newer &rarr;</a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="js/jquery-3.5.1.slim.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
